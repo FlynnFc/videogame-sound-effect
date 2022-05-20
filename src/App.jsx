@@ -10,7 +10,7 @@ function App() {
   };
 
   return (
-    <>
+    <div>
       {!isGameLive && (
         <div className="flex justify-center content-center h-screen items-center">
           <button
@@ -24,7 +24,7 @@ function App() {
         </div>
       )}
       {isGameLive && <Difficulty></Difficulty>}
-    </>
+    </div>
   );
 }
 

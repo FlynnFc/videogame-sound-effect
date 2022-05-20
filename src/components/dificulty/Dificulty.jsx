@@ -22,23 +22,25 @@ export const Difficulty = () => {
   };
 
   return (
-    <form className="flex flex-col justify-evenly h-screen items-center space-x-12 bg-neutral text-neutral-content ">
-      <h1 className="text-5xl ">
+    <form className="flex flex-col justify-evenly h-screen items-center xl:space-x-12 text-neutral-content text-xl">
+      <h1 className="md:text-5xl font-bold text-5xl">
         Before you{" "}
-        <button className="btn btn-outline btn-lg text-4xl font-bold">
+        <button
+          id="submitButton"
+          className="btn btn-outline btn-primary btn-lg text-4xl font-thin"
+        >
           Begin
         </button>
       </h1>
-      <div className=" flex-row flex space-x-12">
+      <div className=" xl:flex-row  flex-col items-strech space-y-2 lg:space-y-0 space-x-0 lg:space-x-10 text-xl flex">
         <div className="card w-96 bg-base-100 shadow-xl card-bordered	">
           <div className="card-body">
-            <h2 className="card-title underline">Easy mode</h2>
-            <ul className="space-y-2">
+            <h2 className="card-title underline underline-offset-1">
+              Easy mode
+            </h2>
+            <ul className="space-y-2 font-thin">
               <li>You get 3 guesses.</li>
-              <li>
-                The answer does not need to be the exact game eg "Halo" instead
-                of "Halo 2"
-              </li>
+              <li>The answer does not need to be the exact game</li>
             </ul>
             <div className="card-actions justify-end p-4">
               <button
@@ -54,8 +56,10 @@ export const Difficulty = () => {
         </div>
         <div className="card w-96 bg-base-100 shadow-xl">
           <div className="card-body">
-            <h2 className="card-title underline">Hard mode</h2>
-            <ul className="space-y-2">
+            <h2 className="card-title underline underline-offset-1">
+              Hard mode
+            </h2>
+            <ul className="space-y-2 font-thin">
               <li>You get 2 guesses</li>
               <li>You'r answer must be exact</li>
               <li>skipping reduces points</li>
