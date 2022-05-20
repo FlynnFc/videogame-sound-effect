@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.activeGreen {
+  background-color: hsl(var(--su));
+  color: hsl(var(--b3)) !important;
+}
+
+.activeRed {
+  background-color: hsl(var(--er));
+  color: hsl(var(--b3)) !important;
+}
