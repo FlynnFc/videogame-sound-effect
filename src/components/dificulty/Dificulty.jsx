@@ -1,5 +1,7 @@
 import React from "react";
 import { useRef } from "react";
+import { NavLink, Route, Routes } from "react-router-dom";
+import { Easy } from "../Easy";
 
 export const Difficulty = () => {
   const greenButtonRef = useRef();
@@ -25,12 +27,14 @@ export const Difficulty = () => {
     <form className="flex flex-col justify-evenly h-screen items-center xl:space-x-12 text-neutral-content text-xl">
       <h1 className="md:text-5xl font-bold text-5xl">
         Before you{" "}
-        <button
-          id="submitButton"
-          className="btn btn-outline btn-primary btn-lg text-4xl font-thin"
-        >
-          Begin
-        </button>
+        <NavLink to="easy">
+          <button
+            id="submitButton"
+            className="btn btn-outline btn-primary btn-lg text-4xl font-thin"
+          >
+            Begin
+          </button>
+        </NavLink>
       </h1>
       <div className=" xl:flex-row  flex-col items-strech space-y-2 lg:space-y-0 space-x-0 lg:space-x-10 text-xl flex">
         <div className="card w-96 bg-base-100 shadow-xl card-bordered	">
@@ -77,6 +81,10 @@ export const Difficulty = () => {
           </div>
         </div>
       </div>
+      <Routes>
+        <Route path="hard"></Route>
+        <Route path="easy" element={<Easy></Easy>}></Route>
+      </Routes>
     </form>
   );
 };

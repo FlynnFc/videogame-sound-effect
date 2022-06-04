@@ -1,22 +1,18 @@
 import "./App.css";
-import { useState } from "react";
 import { Difficulty } from "./components/dificulty/Dificulty";
 import { Home } from "./components/Home";
-import { Nav } from "./components/header/Nav";
+import "./App.css";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 const App = () => {
-  const [isGameLive, setIsGameLive] = useState(true);
-
-  const gameStatusHandler = () => {
-    setIsGameLive(true);
-  };
-
   return (
-    <div>
-      <Nav></Nav>
-      {!isGameLive && <Home gameStatusHandler={gameStatusHandler} />}
-      {isGameLive && <Difficulty></Difficulty>}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home></Home>} />
+        <Route path="play/*" element={<Difficulty></Difficulty>} />
+      </Routes>
+    </BrowserRouter>
   );
 };
 
