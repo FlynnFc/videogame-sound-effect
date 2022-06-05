@@ -13,8 +13,6 @@ export const Difficulty = () => {
     setGamemodePath(mode);
   };
 
-  console.log(gamemodePath);
-
   const activeGreenButtonHandler = () => {
     if (greenButtonRef.current.classList.contains("activeGreen")) {
       return;
