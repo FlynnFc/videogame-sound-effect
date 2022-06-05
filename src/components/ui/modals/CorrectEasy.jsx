@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-export const CorrectEasy = () => {
+export const CorrectEasy = (props) => {
   const navigate = useNavigate();
 
   const handleQuit = () => {
@@ -41,6 +41,7 @@ export const CorrectEasy = () => {
             </div>
             <div className="bg-base-100 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
               <button
+                onClick={props.continueHandler}
                 type="button"
                 className="btn btn-success w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 text-base font-medium  sm:ml-3 sm:w-auto sm:text-sm"
               >

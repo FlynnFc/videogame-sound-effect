@@ -18,17 +18,20 @@ export const Easy = () => {
   const [currentSource, setCurrentSource] = useState("sourceTest");
   const [skipCount, setSkipCount] = useState(3);
   const [skipDisabled, setSkipDisabled] = useState("");
+  const [currentScore, setCurrentScore] = useState(0);
 
   const skipHandler = (skips) => {
-    console.log(skips);
     if (skips > 0) {
       setSkipCount((skips) => --skips);
       setGuessHandler(() => "noAnswer");
-      console.log("you have", skipCount);
     } else {
-      console.log("You've run out of skips");
       setSkipDisabled(() => "disabled");
     }
+  };
+
+  const handleContinue = () => {
+    setGuessHandler(() => "noAnswer");
+    setCurrentScore((currentScore) => ++currentScore);
   };
 
   useEffect(() => {
@@ -61,6 +64,7 @@ export const Easy = () => {
       className="flex flex-col text-center justify-center align-middle"
       style={{ height: "94vh" }}
     >
+      <h4>Current score is {currentScore}</h4>
       <div className="flex justify-center align-middle pb-5">
         <Audio currentSource={currentSource}></Audio>
       </div>
@@ -69,7 +73,7 @@ export const Easy = () => {
           ref={answer}
           type="text"
           placeholder="Your guess"
-          className="input input-bordered w-full max-w-2xl md:text-5xl text-2xl h-full md:rounded-r-none text-center shadow-x p-4"
+          className="input input-bordered w-full max-w-4xl md:text-5xl text-2xl h-full md:rounded-r-none text-center shadow-x p-4"
         />
         <button
           onClick={answerSubmitHandler}
@@ -79,7 +83,9 @@ export const Easy = () => {
           Guess
         </button>
       </div>
-      {guessHandler === "correct" && <CorrectEasy></CorrectEasy>}
+      {guessHandler === "correct" && (
+        <CorrectEasy continueHandler={handleContinue}></CorrectEasy>
+      )}
       {guessHandler === "incorrect" && (
         <IncorrectEasy
           disableHandler={skipDisabled}

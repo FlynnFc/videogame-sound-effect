@@ -34,15 +34,15 @@ export const Difficulty = () => {
 
   return (
     <form
-      className="flex flex-col justify-evenly items-center xl:space-x-12 text-neutral-content text-xl"
+      className="flex flex-col justify-evenly items-center xl:space-x-12 text-neutral-content text-xl p-4"
       style={{ height: "94vh" }}
     >
-      <h1 className="md:text-5xl font-bold text-base-content text-5xl">
+      <h1 className="md:text-5xl font-bold text-base-content lg:text-5xl text-3xl">
         Before you
         <NavLink to={gamemodePath}>
           <button
             id="submitButton"
-            className="btn btn-outline btn-primary-content btn-lg text-4xl ml-2"
+            className="btn btn-outline btn-primary-content btn-lg lg:text-4xl text-3xl ml-2"
           >
             Begin
           </button>
