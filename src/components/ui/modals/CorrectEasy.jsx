@@ -25,7 +25,7 @@ export const CorrectEasy = () => {
                   <div class="mt-2">
                     <p class="text-md text-base-content">
                       You're answer was correct. You can continue and increase
-                      your score 😁 or if you have had enoung you can give up
+                      your score 😁 or if you have had enough you can give up
                       😢.
                     </p>
                   </div>

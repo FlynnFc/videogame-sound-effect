@@ -16,6 +16,9 @@ export const Difficulty = () => {
   console.log(gamemodePath);
 
   const activeGreenButtonHandler = () => {
+    if (greenButtonRef.current.classList.contains("activeGreen")) {
+      return;
+    }
     greenButtonRef.current.classList.toggle("activeGreen");
     modeHandler("easy");
     if (redButtonRef.current.classList.contains("activeRed")) {
