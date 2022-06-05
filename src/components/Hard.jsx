@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Easy = () => {
+export const Hard = () => {
   return (
     <div
       className="flex flex-col text-center justify-center align-middle"
@@ -21,7 +21,7 @@ export const Easy = () => {
         />
         <button
           type="button"
-          className="btn btn-info h-full rounded-l-none shadow-xl text-2xl"
+          className="btn btn-warning h-full rounded-l-none shadow-xl text-2xl"
         >
           Guess
         </button>

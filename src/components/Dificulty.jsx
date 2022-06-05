@@ -1,15 +1,23 @@
 import React from "react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { NavLink, Route, Routes } from "react-router-dom";
-import { Easy } from "../Easy";
+import { Easy } from "./Easy";
 
 export const Difficulty = () => {
+  const [gamemodePath, setGamemodePath] = useState("easy");
+
   const greenButtonRef = useRef();
   const redButtonRef = useRef();
 
+  const modeHandler = (mode) => {
+    setGamemodePath(mode);
+  };
+
+  console.log(gamemodePath);
+
   const activeGreenButtonHandler = () => {
     greenButtonRef.current.classList.toggle("activeGreen");
-
+    modeHandler("easy");
     if (redButtonRef.current.classList.contains("activeRed")) {
       redButtonRef.current.classList.remove("activeRed");
     }
@@ -17,17 +25,20 @@ export const Difficulty = () => {
 
   const activeRedButtonHandler = () => {
     redButtonRef.current.classList.toggle("activeRed");
-
+    modeHandler("hard");
     if (greenButtonRef.current.classList.contains("activeGreen")) {
       greenButtonRef.current.classList.remove("activeGreen");
     }
   };
 
   return (
-    <form className="flex flex-col justify-evenly h-screen items-center xl:space-x-12 text-neutral-content text-xl">
+    <form
+      className="flex flex-col justify-evenly items-center xl:space-x-12 text-neutral-content text-xl"
+      style={{ height: "94vh" }}
+    >
       <h1 className="md:text-5xl font-bold text-5xl">
-        Before you{" "}
-        <NavLink to="easy">
+        Before you
+        <NavLink to={gamemodePath}>
           <button
             id="submitButton"
             className="btn btn-outline btn-primary btn-lg text-4xl font-thin"
@@ -64,8 +75,8 @@ export const Difficulty = () => {
               Hard mode
             </h2>
             <ul className="space-y-2 font-thin">
-              <li>You get 2 guesses</li>
-              <li>You'r answer must be exact</li>
+              <li>You get 1 guess</li>
+              <li>You're answer must be exact</li>
               <li>skipping reduces points</li>
             </ul>
             <div className="card-actions justify-end p-4">
