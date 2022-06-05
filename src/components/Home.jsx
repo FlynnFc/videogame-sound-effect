@@ -9,7 +9,7 @@ export const Home = (props) => {
     >
       <NavLink to="play">
         <button type="button" className="btn btn-lg">
-          Guees the video game
+          Guess the video game
         </button>
       </NavLink>
     </div>
