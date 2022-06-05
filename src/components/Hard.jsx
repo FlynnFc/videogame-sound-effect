@@ -20,16 +20,16 @@ export const Hard = () => {
         </audio>
       </div>
 
-      <div className="flex justify-center align-middle">
+      <div className="flex justify-center align-middle flex-col md:flex-row mx-4">
         <input
           type="text"
           placeholder="Your guess"
-          className="input input-bordered w-full max-w-2xl text-5xl h-full rounded-r-none text-center shadow-x p-4"
+          className="input input-bordered w-full max-w-2xl md:text-5xl text-2xl h-full md:rounded-r-none text-center shadow-x p-4"
         />
         <button
           onClick={answerSubmitHandler}
           type="button"
-          className="btn btn-warning h-full rounded-l-none shadow-xl text-2xl"
+          className="btn btn-warning md:h-full mt-2 md:mt-0 md:rounded-l-none shadow-xl md:text-2xl"
         >
           Guess
         </button>
