@@ -31,7 +31,7 @@ export const CorrectEasy = () => {
                   </h3>
                   <div class="mt-2">
                     <p class="text-md text-base-content">
-                      You're answer was correct. You can continue and increase
+                      Your answer was correct. You can continue and increase
                       your score 😁 or if you have had enough you can give up
                       😢.
                     </p>
