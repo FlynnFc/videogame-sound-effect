@@ -1,5 +1,5 @@
 import React from "react";
-// import { CorrectEasy } from "./ui/modals/CorrectEasy";
+import { CorrectEasy } from "./ui/modals/CorrectEasy";
 
 export const Easy = () => {
   return (
@@ -27,7 +27,7 @@ export const Easy = () => {
           Guess
         </button>
       </div>
-      {/* <CorrectEasy></CorrectEasy> */}
+      <CorrectEasy></CorrectEasy>
     </div>
   );
 };

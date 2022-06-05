@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRef } from "react";
 import { FaMoon, FaSun } from "react-icons/fa";
+import { themeChange } from "theme-change";
 
 export const Nav = () => {
   const theme = useRef();
@@ -8,15 +9,24 @@ export const Nav = () => {
 
   const themeHandler = () => {
     setDarkMode((darkMode) => !darkMode);
-    console.log(theme.current);
   };
+
+  useEffect(() => {
+    themeChange(false);
+    // 👆 false parameter is required for react project
+  }, []);
+
   return (
     <div
       ref={theme}
       className="text-right pt-2 pr-2 max-w z-10"
       style={{ height: "6vh" }}
     >
-      <button onClick={themeHandler} className="btn">
+      <button
+        onClick={themeHandler}
+        className="btn"
+        data-toggle-theme="light,dark"
+      >
         {!darkMode && <FaMoon className="text-xl" />}
         {darkMode && <FaSun className="text-xl" />}
       </button>
