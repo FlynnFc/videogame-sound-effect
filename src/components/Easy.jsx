@@ -13,11 +13,9 @@ export const Easy = () => {
 
   const [currentGame, setCurrentGame] = useState("test");
   const [currentSource, setCurrentSource] = useState("sourceTest");
-  const [soundEffects, setSoundEffects] = useState([]);
 
   useEffect(() => {
-    setSoundEffects((soundEffects) => [...soundEffects, newSoundEffects]);
-    const newSoundEffects = [
+    const soundEffects = [
       { Game: "mario", source: mario },
       { Game: "csgo", source: csgo },
       { Game: "zelda", source: zelda },
@@ -26,8 +24,8 @@ export const Easy = () => {
       { Game: "league of legends", source: lol },
     ];
 
-    setCurrentSource(() => newSoundEffects[number].source);
-    setCurrentGame(() => newSoundEffects[number].Game);
+    setCurrentSource(() => soundEffects[number].source);
+    setCurrentGame(() => soundEffects[number].Game);
   }, [number]);
 
   // console.log(currentSource, currentGame);
