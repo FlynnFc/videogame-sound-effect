@@ -1,6 +1,13 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export const CorrectEasy = () => {
+  const navigate = useNavigate();
+
+  const handleQuit = () => {
+    navigate("/play", { replace: true });
+  };
+
   return (
     <div
       class="relative z-10"
@@ -39,7 +46,9 @@ export const CorrectEasy = () => {
               >
                 Continue
               </button>
+
               <button
+                onClick={handleQuit}
                 type="button"
                 class="btn btn-error mt-3 w-full inline-flex justify-center rounded-md  shadow-sm px-4 py-2  sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
               >
