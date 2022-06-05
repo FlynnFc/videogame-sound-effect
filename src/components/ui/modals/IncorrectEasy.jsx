@@ -1,10 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 export const IncorrectEasy = (props) => {
   const navigate = useNavigate();
   const skipDisplay = useRef();
-  const [backupCount, setBackupCount] = useState(3);
 
   const handleQuit = () => {
     navigate("/play", { replace: true });
