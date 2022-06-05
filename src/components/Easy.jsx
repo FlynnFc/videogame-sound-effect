@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { IncorrectEasy } from "./ui/modals/IncorrectEasy";
 import { Audio } from "./audio/Audio";
 import { CorrectEasy } from "./ui/modals/CorrectEasy";
 import mario from "../soundEffects/mario.mp3";
@@ -10,9 +11,25 @@ import zelda from "../soundEffects/zelda.mp3";
 
 export const Easy = () => {
   const number = Math.floor(Math.random() * 6 + 0);
+  const answer = useRef();
 
+  const [guessHandler, setGuessHandler] = useState("");
   const [currentGame, setCurrentGame] = useState("test");
   const [currentSource, setCurrentSource] = useState("sourceTest");
+  const [skipCount, setSkipCount] = useState(3);
+  const [skipDisabled, setSkipDisabled] = useState("");
+
+  const skipHandler = (skips) => {
+    console.log(skips);
+    if (skips > 0) {
+      setSkipCount((skips) => --skips);
+      setGuessHandler(() => "noAnswer");
+      console.log("you have", skipCount);
+    } else {
+      console.log("You've run out of skips");
+      setSkipDisabled(() => "disabled");
+    }
+  };
 
   useEffect(() => {
     const soundEffects = [
@@ -30,10 +47,13 @@ export const Easy = () => {
 
   // console.log(currentSource, currentGame);
 
-  const [guessHandler, setGuessHandler] = useState(false);
-
   const answerSubmitHandler = () => {
-    setGuessHandler(true);
+    const userAnswer = answer.current.value;
+    if (userAnswer.includes(currentGame)) {
+      setGuessHandler("correct");
+    } else {
+      setGuessHandler("incorrect");
+    }
   };
 
   return (
@@ -44,9 +64,9 @@ export const Easy = () => {
       <div className="flex justify-center align-middle pb-5">
         <Audio currentSource={currentSource}></Audio>
       </div>
-      <span>{currentGame}</span>
       <div className="flex justify-center align-middle flex-col md:flex-row mx-4">
         <input
+          ref={answer}
           type="text"
           placeholder="Your guess"
           className="input input-bordered w-full max-w-2xl md:text-5xl text-2xl h-full md:rounded-r-none text-center shadow-x p-4"
@@ -59,7 +79,15 @@ export const Easy = () => {
           Guess
         </button>
       </div>
-      {guessHandler && <CorrectEasy></CorrectEasy>}
+      {guessHandler === "correct" && <CorrectEasy></CorrectEasy>}
+      {guessHandler === "incorrect" && (
+        <IncorrectEasy
+          disableHandler={skipDisabled}
+          guessHandler={setGuessHandler}
+          skipsLeft={skipCount}
+          skipHandler={skipHandler}
+        ></IncorrectEasy>
+      )}
     </div>
   );
 };
