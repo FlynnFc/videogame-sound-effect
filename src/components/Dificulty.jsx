@@ -82,6 +82,7 @@ export const Difficulty = () => {
             </ul>
             <div className="card-actions justify-end p-4">
               <button
+                disabled
                 ref={redButtonRef}
                 type="button"
                 onClick={activeRedButtonHandler}
