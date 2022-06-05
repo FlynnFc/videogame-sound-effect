@@ -6,12 +6,12 @@ export const Audio = (props) => {
 
   useEffect(() => {
     setSource(props.currentSource);
+    console.log("use effect running");
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.load();
     }
-  });
-  console.log("component rendered", props.currentSource);
+  }, [props.currentSource]);
   return (
     <div>
       {/* <button className="btn">play</button> */}

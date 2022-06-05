@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Audio } from "./audio/Audio";
 import { CorrectEasy } from "./ui/modals/CorrectEasy";
 import mario from "../soundEffects/mario.mp3";
@@ -13,20 +13,22 @@ export const Easy = () => {
 
   const [currentGame, setCurrentGame] = useState("test");
   const [currentSource, setCurrentSource] = useState("sourceTest");
-
-  const soundEffects = [
-    { Game: "mario", source: mario },
-    { Game: "csgo", source: csgo },
-    { Game: "zelda", source: zelda },
-    { Game: "minecraft", source: minecraft },
-    { Game: "world of warcraft", source: wow },
-    { Game: "league of legends", source: lol },
-  ];
+  const [soundEffects, setSoundEffects] = useState([]);
 
   useEffect(() => {
-    setCurrentSource(() => soundEffects[number].source);
-    setCurrentGame(() => soundEffects[number].Game);
-  }, []);
+    setSoundEffects((soundEffects) => [...soundEffects, newSoundEffects]);
+    const newSoundEffects = [
+      { Game: "mario", source: mario },
+      { Game: "csgo", source: csgo },
+      { Game: "zelda", source: zelda },
+      { Game: "minecraft", source: minecraft },
+      { Game: "world of warcraft", source: wow },
+      { Game: "league of legends", source: lol },
+    ];
+
+    setCurrentSource(() => newSoundEffects[number].source);
+    setCurrentGame(() => newSoundEffects[number].Game);
+  }, [number]);
 
   // console.log(currentSource, currentGame);
 

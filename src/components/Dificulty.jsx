@@ -48,7 +48,7 @@ export const Difficulty = () => {
           </button>
         </NavLink>
       </h1>
-      <div className=" xl:flex-row  flex-col items-strech space-y-2 lg:space-y-0 space-x-0 lg:space-x-10 text-xl flex">
+      <div className=" xl:flex-row flex-col items-strech space-y-2 lg:space-x-2 xl:space-y-0 space-x-0 xl:space-x-10 text-xl flex">
         <div className="card w-96 bg-base-100 shadow-xl card-bordered	">
           <div className="card-body">
             <h2 className="card-title underline underline-offset-1 text-2xl">
