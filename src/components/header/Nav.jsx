@@ -7,6 +7,7 @@ export const Nav = () => {
   const [darkMode, setDarkMode] = useState(true);
 
   const themeHandler = () => {
+    setDarkMode((darkMode) => !darkMode);
     console.log(theme.current);
   };
   return (
