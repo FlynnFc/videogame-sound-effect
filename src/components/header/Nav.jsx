@@ -25,7 +25,7 @@ export const Nav = () => {
       <button
         onClick={themeHandler}
         className="btn"
-        data-toggle-theme="light,dark"
+        data-toggle-theme="synthwave,autumn"
       >
         {!darkMode && <FaMoon className="text-xl" />}
         {darkMode && <FaSun className="text-xl" />}

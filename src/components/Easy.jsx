@@ -64,21 +64,24 @@ export const Easy = () => {
       className="flex flex-col text-center justify-center align-middle"
       style={{ height: "94vh" }}
     >
-      <h4>Current score is {currentScore}</h4>
+      <h4 className="text-2xl font-medium py-10">
+        Current score is{" "}
+        <span className="text-2xl font-bold">{currentScore}</span>
+      </h4>
       <div className="flex justify-center align-middle pb-5">
         <Audio currentSource={currentSource}></Audio>
       </div>
-      <div className="flex justify-center align-middle flex-col md:flex-row mx-4">
+      <div className="flex justify-center items-center align-stre flex-col md:space-x-0 px-10 py-5">
         <input
           ref={answer}
           type="text"
           placeholder="Your guess"
-          className="input input-bordered w-full max-w-4xl md:text-5xl text-2xl h-full md:rounded-r-none text-center shadow-x p-4"
+          className="input input-bordered w-full max-w-4xl text-center text-4xl h-full shadow-x p-6 focus:outline-1"
         />
         <button
           onClick={answerSubmitHandler}
           type="button"
-          className="btn btn-info md:h-full mt-2 md:mt-0 md:rounded-l-none shadow-xl md:text-2xl"
+          className="btn btn-info l mt-2 md:max-w-4xl shadow-xl text-xl w-full"
         >
           Guess
         </button>
