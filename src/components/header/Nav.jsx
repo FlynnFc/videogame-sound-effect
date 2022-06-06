@@ -19,7 +19,7 @@ export const Nav = () => {
   return (
     <div
       ref={theme}
-      className="text-right pt-2 pr-2 max-w z-10"
+      className="text-right pt-2 pr-2 max-w z-10 flex justify-end items-center"
       style={{ height: "6vh" }}
     >
       <button
