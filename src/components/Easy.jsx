@@ -43,6 +43,7 @@ export const Easy = () => {
   const [skipDisabled, setSkipDisabled] = useState("");
   const [currentScore, setCurrentScore] = useState(0);
 
+  const number = Math.floor(Math.random() * 30 + 0);
   const skipHandler = (skips) => {
     if (skips > 0) {
       setSkipCount((skips) => --skips);
@@ -63,8 +64,6 @@ export const Easy = () => {
   };
 
   useEffect(() => {
-    const number = Math.floor(Math.random() * 30 + 0);
-
     const soundEffects = [
       { Game: ["mario"], source: mario },
       {
@@ -118,12 +117,9 @@ export const Easy = () => {
       { Game: ["starcraft", "starcraft 2"], source: starcraft },
       { Game: ["superhot", "super hot"], source: superhot },
     ];
-    console.log(soundEffects.length);
     setCurrentSource(() => soundEffects[number].source);
     setCurrentGame(() => soundEffects[number].Game);
-  }, []);
-
-  console.log(currentGame);
+  }, [number]);
 
   const answerSubmitHandler = () => {
     const userAnswer = answer.current.value.toLowerCase();
