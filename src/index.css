@@ -8,11 +8,11 @@ code {
 }
 
 .activeGreen {
-  background-color: hsl(var(--su));
+  background-color: hsl(var(--in));
   color: hsl(var(--b3)) !important;
 }
 
 .activeRed {
-  background-color: hsl(var(--er));
+  background-color: hsl(var(--wa));
   color: hsl(var(--b3)) !important;
 }

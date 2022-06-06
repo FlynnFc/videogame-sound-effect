@@ -13,7 +13,6 @@ export const Audio = (props) => {
   }, [props.currentSource]);
   return (
     <div>
-      {/* <button className="btn">play</button> */}
       <audio ref={audioRef} controls>
         <source type="audio/mpeg" src={source} />
         <source type="audio/ogg" src="" />

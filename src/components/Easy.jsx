@@ -43,7 +43,6 @@ export const Easy = () => {
   const [skipDisabled, setSkipDisabled] = useState("");
   const [currentScore, setCurrentScore] = useState(0);
 
-  const number = Math.floor(Math.random() * 30 + 0);
   const skipHandler = (skips) => {
     if (skips > 0) {
       setSkipCount((skips) => --skips);
@@ -64,6 +63,8 @@ export const Easy = () => {
   };
 
   useEffect(() => {
+    const number = Math.floor(Math.random() * 30 + 0);
+
     const soundEffects = [
       { Game: ["mario"], source: mario },
       {
@@ -119,7 +120,7 @@ export const Easy = () => {
     ];
     setCurrentSource(() => soundEffects[number].source);
     setCurrentGame(() => soundEffects[number].Game);
-  }, [number]);
+  }, [guessHandler]);
 
   const answerSubmitHandler = () => {
     const userAnswer = answer.current.value.toLowerCase();
@@ -145,7 +146,10 @@ export const Easy = () => {
         </span>
       </div>
       <div className="flex justify-center align-middle">
-        <Audio currentSource={currentSource}></Audio>
+        <Audio
+          currentScore={currentScore}
+          currentSource={currentSource}
+        ></Audio>
       </div>
       <div className="flex justify-center items-center align-stre flex-col md:space-x-0 px-10 py-5">
         <input

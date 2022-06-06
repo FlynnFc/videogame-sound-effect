@@ -51,11 +51,11 @@ export const Difficulty = () => {
       <div className=" xl:flex-row flex-col items-strech space-y-2 lg:space-x-2 xl:space-y-0 space-x-0 xl:space-x-10 text-xl flex">
         <div className="card w-96 bg-base-100 shadow-xl card-bordered	">
           <div className="card-body">
-            <h2 className="card-title underline underline-offset-1 text-2xl">
+            <h2 className="card-title underline underline-offset-1 text-2xl easyModeTitle">
               Easy mode
             </h2>
             <ul className="space-y-2 font-thin">
-              <li>You get 3 guesses.</li>
+              <li>You get 3 skips.</li>
               <li>The answer does not need to be the exact game</li>
             </ul>
             <div className="card-actions justify-end p-4">
@@ -63,7 +63,7 @@ export const Difficulty = () => {
                 ref={greenButtonRef}
                 type="button"
                 onClick={activeGreenButtonHandler}
-                className="btn btn-outline btn-success activeGreen"
+                className="btn btn-outline btn-info activeGreen"
               >
                 Easy mode
               </button>
@@ -72,7 +72,7 @@ export const Difficulty = () => {
         </div>
         <div className="card w-96 bg-base-100 shadow-xl">
           <div className="card-body">
-            <h2 className="card-title underline underline-offset-1 text-2xl">
+            <h2 className="card-title underline underline-offset-1 text-2xl hardModeTitle">
               Hard mode
             </h2>
             <ul className="space-y-2 font-thin">
@@ -82,11 +82,10 @@ export const Difficulty = () => {
             </ul>
             <div className="card-actions justify-end p-4">
               <button
-                disabled
                 ref={redButtonRef}
                 type="button"
                 onClick={activeRedButtonHandler}
-                className="btn btn-outline btn-error"
+                className="btn btn-outline btn-warning"
               >
                 Hard mode
               </button>
