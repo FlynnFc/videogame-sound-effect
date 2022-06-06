@@ -24,6 +24,7 @@ export const Easy = () => {
     if (skips > 0) {
       setSkipCount((skips) => --skips);
       setGuessHandler(() => "noAnswer");
+      answer.current.value = "";
     } else {
       setSkipDisabled(() => "disabled");
     }
@@ -32,6 +33,7 @@ export const Easy = () => {
   const handleContinue = () => {
     setGuessHandler(() => "noAnswer");
     setCurrentScore((currentScore) => ++currentScore);
+    answer.current.value = "";
   };
 
   useEffect(() => {
@@ -51,7 +53,7 @@ export const Easy = () => {
   // console.log(currentSource, currentGame);
 
   const answerSubmitHandler = () => {
-    const userAnswer = answer.current.value;
+    const userAnswer = answer.current.value.toLowerCase();
     if (userAnswer.includes(currentGame)) {
       setGuessHandler("correct");
     } else {
