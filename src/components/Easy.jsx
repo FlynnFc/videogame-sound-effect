@@ -38,23 +38,26 @@ export const Easy = () => {
 
   useEffect(() => {
     const soundEffects = [
-      { Game: "mario", source: mario },
-      { Game: "csgo", source: csgo },
-      { Game: "zelda", source: zelda },
-      { Game: "minecraft", source: minecraft },
-      { Game: "world of warcraft", source: wow },
-      { Game: "league of legends", source: lol },
+      { Game: ["mario"], source: mario },
+      {
+        Game: ["counter-strike", "csgo", "cs", "couter strike", "cs:go"],
+        source: csgo,
+      },
+      { Game: ["zelda"], source: zelda },
+      { Game: ["minecraft"], source: minecraft },
+      { Game: ["world of warcraft", "wow"], source: wow },
+      { Game: ["league of legends", "league", "lol"], source: lol },
     ];
 
     setCurrentSource(() => soundEffects[number].source);
     setCurrentGame(() => soundEffects[number].Game);
   }, [number]);
 
-  // console.log(currentSource, currentGame);
+  console.log(currentGame);
 
   const answerSubmitHandler = () => {
     const userAnswer = answer.current.value.toLowerCase();
-    if (userAnswer.includes(currentGame)) {
+    if (currentGame.indexOf(userAnswer) > -1) {
       setGuessHandler("correct");
     } else {
       setGuessHandler("incorrect");
