@@ -78,7 +78,7 @@ export const Difficulty = () => {
             <ul className="space-y-2 font-thin">
               <li>You get 1 guess</li>
               <li>You're answer must be exact</li>
-              <li>skipping reduces points</li>
+              <li>Your answer is case sensitive</li>
             </ul>
             <div className="card-actions justify-end p-4">
               <button
