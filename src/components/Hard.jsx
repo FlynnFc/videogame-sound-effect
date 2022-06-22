@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from "react";
-import { IncorrectEasy } from "./ui/modals/IncorrectEasy";
 import { Audio } from "./audio/Audio";
 import { CorrectEasy } from "./ui/modals/CorrectEasy";
 import mario from "../soundEffects/mario.mp3";
