@@ -3,9 +3,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-    <img src="https://www.canterburybid.co.uk/wp-content/uploads/2018/07/UKC-logo.jpg" alt="Logo" width="80" height="80">
 
-  <h3 align="center">University Film Events</h3>
+  <h3 align="center">Video Game Sound Effect Quiz</h3>
 
   <p align="center">
     A fun app to test your sound effect knowledge
