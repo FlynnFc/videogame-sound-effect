@@ -1,3 +1,43 @@
+<div id="top"></div>
+
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+    <img src="https://www.canterburybid.co.uk/wp-content/uploads/2018/07/UKC-logo.jpg" alt="Logo" width="80" height="80">
+
+  <h3 align="center">University Film Events</h3>
+
+  <p align="center">
+    A fun app to test your sound effect knowledge
+    <br />
+    <a href="https://spontaneous-mandazi-b9cae3.netlify.app/">View Demo</a>
+  </p>
+</div>
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+
+I created a version of this app when I first begun learning to code and then realised I did not have a skills to complete it. Now with my new skills, including my imporved knowledge of react I have made a functioning version.
+
+Some challenges:
+* Managing the state across the entire component tree
+* Answer logic
+* React router
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Built With
+
+* [React.js](https://reactjs.org/)
+* [Tailwind](https://tailwindcss.com/)
+* [DasiyUI](https://daisyui.com/)
+
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
